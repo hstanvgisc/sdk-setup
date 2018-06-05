@@ -84,6 +84,8 @@ Requires:   git
 Requires:   tar
 Requires:   p7zip-full
 Requires:   gnu-cpio
+Requires:   /usr/bin/python3
+Requires:   bash4
 Conflicts:  sdk-harbour-rpmvalidator < 1.49
 
 %description -n sdk-utils
@@ -202,6 +204,7 @@ cp src/rpmvalidation %{buildroot}%{_bindir}/
 ln -sf rpmvalidation %{buildroot}%{_bindir}/rpmvalidation.sh
 cp src/git-lltb %{buildroot}%{_bindir}/
 cp src/sdk-init %{buildroot}%{_bindir}/
+cp src/sdk-make-qmltypes %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}%{_datadir}/%{name}
 cp README.tips.wiki %{buildroot}%{_datadir}/%{name}/
 
@@ -331,6 +334,7 @@ fi
 %{_bindir}/rpmvalidation
 %{_bindir}/git-lltb
 %{_bindir}/sdk-init
+%{_bindir}/sdk-make-qmltypes
 %config %{_sysconfdir}/ssh/ssh_config.sdk
 %config %{_sysconfdir}/bash_completion.d/mb2.bash
 %config %{_sysconfdir}/bash_completion.d/sdk-assistant.bash
